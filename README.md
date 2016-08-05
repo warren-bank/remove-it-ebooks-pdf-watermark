@@ -46,15 +46,33 @@
 
 * The strategy in branch [2](https://github.com/warren-bank/remove-it-ebooks-pdf-watermark/tree/strategy/2-remove-selective-obj) is the winner
 
-# Notes:
+## Notes:
 
 * These are perl scripts.
 * To run: `perl filter.pl`
-* These early versions don't take any command-line options.
+* These initial "proof-of-concept" implementations don't accept any command-line options.
   They assume that:
   * the input file is: `./in.pdf`
   * the output file is: `./out.pdf`
 
-# To-Do:
+## To-Do:
 
 * Add a [master](https://github.com/warren-bank/remove-it-ebooks-pdf-watermark/tree/master) branch with a version of the script that's based on branch [2](https://github.com/warren-bank/remove-it-ebooks-pdf-watermark/tree/strategy/2-remove-selective-obj), but accepts command-line options.
+
+## Additional Notes
+
+* After running a PDF file through (version [2](https://github.com/warren-bank/remove-it-ebooks-pdf-watermark/tree/strategy/2-remove-selective-obj) of) the perl script:
+  * a PDF viewer (ex: [_"PDF-XChange Viewer"_](http://portableapps.com/apps/office/pdf-xchange-portable)) should report that:
+
+    ```
+    This document "out.pdf" has errors.
+    
+    Some problems were detected by application:
+    - One or more XREF chunks were not found.
+    
+    It is recommended you re-save this document.
+    ```
+* After following the recommendation given by the viewer and resaving the PDF document (ie: `File > Save As..`):
+  * all of the PDF's internal references to the removed `obj` blocks are cleaned out
+  * the file size is farther reduce by a significant amount
+  * the file won't generate any errors when opened in a PDF viewer
