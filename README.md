@@ -1,4 +1,10 @@
-## [Strategies](https://github.com/warren-bank/remove-it-ebooks-pdf-watermark/tree/strategies)
+### Project Has Moved
+
+This project has been moved to the [`it-ebooks` branch](https://github.com/warren-bank/remove-common-pdf-watermarks/tree/it-ebooks) of the [`remove-common-pdf-watermarks` repo](https://github.com/warren-bank/remove-common-pdf-watermarks).
+
+The new project uses [strategy #2](https://github.com/warren-bank/remove-it-ebooks-pdf-watermark/tree/strategy/2-remove-selective-obj) from this repo. Each branch is a variation of the script, customized to remove a particular common PDF watermark.
+
+### [Strategies](https://github.com/warren-bank/remove-it-ebooks-pdf-watermark/tree/strategies)
 
 1. [remove all](https://github.com/warren-bank/remove-it-ebooks-pdf-watermark/tree/strategy/1-remove-all-obj)
   * remove all `XX YY obj` .. `endobj` that contain the string: `www.it-ebooks.info`
@@ -42,11 +48,11 @@
   * notes:
     * Honestly, I have no idea if this is even valid according to the PDF spec. At the time, it was worth a shot.
 
-## Summary:
+### Summary
 
 * The strategy in branch [2](https://github.com/warren-bank/remove-it-ebooks-pdf-watermark/tree/strategy/2-remove-selective-obj) is the winner
 
-## Notes:
+### Notes
 
 * These are perl scripts.
 * To run: `perl filter.pl`
@@ -55,11 +61,11 @@
   * the input file is: `./in.pdf`
   * the output file is: `./out.pdf`
 
-## To-Do:
+### To-Do
 
 * Add a [master](https://github.com/warren-bank/remove-it-ebooks-pdf-watermark/tree/master) branch with a version of the script that's based on branch [2](https://github.com/warren-bank/remove-it-ebooks-pdf-watermark/tree/strategy/2-remove-selective-obj), but accepts command-line options.
 
-## Additional Notes
+### Additional Notes
 
 * After running a PDF file through (version [2](https://github.com/warren-bank/remove-it-ebooks-pdf-watermark/tree/strategy/2-remove-selective-obj) of) the perl script:
   * a PDF viewer (ex: [_"PDF-XChange Viewer"_](http://portableapps.com/apps/office/pdf-xchange-portable)) should report that:
@@ -76,3 +82,9 @@
   * all of the PDF's internal references to the removed `obj` blocks are cleaned out
   * the file size is farther reduce by a significant amount
   * the file won't generate any errors when opened in a PDF viewer
+
+### License
+
+> [GPLv2](http://www.gnu.org/licenses/gpl-2.0.txt)
+
+> Copyright (c) 2016, Warren Bank
